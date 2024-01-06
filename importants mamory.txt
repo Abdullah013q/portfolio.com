@@ -1,0 +1,12 @@
+We use   "removedChild"   for removing div's
+
+
+for add classes from JavaScript:  
+                                         element.classList.add("open")
+
+for removing classes from JavaScript:  
+                                        element.classList.remove("open")
+
+
+(note: element is the tag to add class )                                    
+                                   
