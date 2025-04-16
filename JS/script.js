@@ -343,25 +343,29 @@ document.getElementById('count_num').innerHTML = localStorage.getItem('less_coun
 form.classList.add(localStorage.getItem('remove_btn'))
 localStorage.getItem('form')
 
+document.getElementById('count_num').innerHTML=localStorage.getItem('form')
 
 
 btn.addEventListener('click',()=>{
     
     
-    if(document.getElementById('count_num').innerText=3 && form.classList.contains("form1")){
+    if(document.getElementById('count_num').innerText=3 && form.classList.contains("form1") && localStorage.getItem('form')== undefined ){
         plus1 = document.getElementById('count_num').innerText='You have remaining 2 messages'
         localStorage.setItem('form',plus1)
+        document.getElementById('count_num').innerHTML=localStorage.getItem('form')
         form.classList.remove("form1")
         
     }
     else if(document.getElementById('count_num').innerText=2 && form.classList.contains("form2") && plus1=='You have remaining 2 messages'){
         plus2 = document.getElementById('count_num').innerText='You have remaining 1 messages'
         localStorage.setItem('form',plus2)
+        document.getElementById('count_num').innerHTML=localStorage.getItem('form')
         form.classList.remove('form2')
     }
     else if(document.getElementById('count_num').innerText=1 && form.classList.contains("form3") && plus2=='You have remaining 1 messages'){
         plus3 =document.getElementById('count_num').innerText='You have remaining zero messages'
         localStorage.setItem('form',plus3)
+        document.getElementById('count_num').innerHTML=localStorage.getItem('form')
         form.classList.remove('form3')
         
     }
@@ -369,7 +373,9 @@ btn.addEventListener('click',()=>{
         localStorage.setItem('less_count', `<p class="worning" style=" font-size: larger; text-align: center; margin-bottom:2rem;">Your Limited Messages Completed</p>`) 
         document.getElementById('count_num').innerHTML = localStorage.getItem('less_count')
         localStorage.setItem('remove_btn', "disable")
+        // document.getElementById('count_num').innerHTML=localStorage.getItem('form')
         form.classList.add(localStorage.getItem('remove_btn'))
+
 
 
 
